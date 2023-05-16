@@ -72,8 +72,7 @@ class ScanForm(npyscreen.Form):
         self.DISPLAY()
 
     def afterEditing(self):
-        pass
-
+        self.parentApp.switchForm('MAIN')
 
     def on_scan_again(self):
         self.parentApp.switchForm('SCAN')
@@ -100,7 +99,7 @@ class ScanForm(npyscreen.Form):
     def scan(self):
         try:
             target = self.parentApp.datastore.target
-            self.wg_result.value = f"Scanning... {target}"
+            self.wg_result.value = f"Scanning... CTRL-C to stop. {target}"
             self.DISPLAY()
             self.get_new_file_name()
             cmd = f'nmap -sn -n -v {target}'
