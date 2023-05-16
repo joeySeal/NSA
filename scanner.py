@@ -2,7 +2,7 @@
 python3 -m venv env
 source env/bin/activate
 pip install npyscreen
-python main.py
+python scanner.py
 """
 
 import os
